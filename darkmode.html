@@ -35,19 +35,17 @@
 
     <script>
         $('form').on('submit', function(e) {
-            if (document.getElementById('email').value == '') {
-                alert("아이디 입력안했음");
-                e.preventDefault();
 
-                if (document.getElementById('passwrd').value == '') {
-                    alert("비번 입력안했음");
-                    e.preventDefault();
-                } else if (document.getElementById('passwrd').length < 6) {
-                    alert('입력한 글자가 6글자 이상이어야 합니다.');
-                    e.preventDefault();
-                }
+            var 입력한값 = document.getElementById('email').value;
+            if (/\S+@\S+\.\S+/.test(입력한값)) {
+                alert('이메일형식아님')
+                e.preventDefault();
             }
 
+            var 비번 = document.getElementById('pw').value;
+            if (/[A-Z]/.test(비번) == false) {
+                alert('대문자없는데요')
+            }
 
         });
     </script>
@@ -91,7 +89,59 @@
         <button id="login" class="btn btn-danger">로그인 </button>
     </div>
 
+    <div style="overflow: hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="img/car1.png" alt="">
+            </div>
+            <div class="slide-box">
+                <img src="img/car2.png" alt="">
+            </div>
+            <div class="slide-box">
+                <img src="img/car3.png" alt="">
+            </div>
+        </div>
+    </div>
 
+    <button class="slide-1 btn">1</button>
+    <button class="slide-2 btn">2</button>
+    <button class="slide-3 btn">3</button>
+    <button class="next">다음</button>
+    <button class="previous">이전</button>
+
+    <script>
+        var 지금사진 = 1;
+
+        $('.next').on('click', function() {
+            if (지금사진 == 1) {
+                $('.slide-container').css('transform', 'translateX(-100vw)');
+                지금사진++;
+            } else if (지금사진 == 2) {
+                $('.slide-container').css('transform', 'translateX(-200vw)');
+                지금사진++;
+            }
+        });
+
+        $('.previous').on('click', function() {
+            if (지금사진 == 3) {
+                $('.slide-container').css('transform', 'translateX(-100vw)');
+                지금사진--;
+            } else if (지금사진 == 2) {
+                $('.slide-container').css('transform', 'translateX(0vw)');
+                지금사진--;
+            }
+        });
+
+        $('.slide-1').on('click', function() {
+            $('.slide-container').css('transform', 'translateX(0vw)');
+        });
+        $('.slide-2').on('click', function() {
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+        });
+        $('.slide-3').on('click', function() {
+            $('.slide-container').css('transform', 'translateX(-200vw)');
+        });
+    </script>
     <script>
         $('#login').on('click', function() {
             $('.black-bg').addClass('show-modal');
