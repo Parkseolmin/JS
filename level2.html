@@ -1,27 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <header>
+        <h1>My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>Hi, I'm Jane Doe. I'm a web developer based in San Francisco, CA. I have experience with HTML, CSS, and JavaScript, and I love building beautiful, responsive websites.</p>
+            <p>When I'm not coding, I enjoy hiking, reading, and spending time with my cat.</p>
+        </section>
+        <section>
+            <h2>My Projects</h2>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="img/car1.png" alt="Project 1">
+                        <h3>Project 1</h3>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed dui eget nibh scelerisque ultrices eu eu turpis.</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/car2.png" alt="Project 2">
+                        <h3>Project 2</h3>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed dui eget nibh scelerisque ultrices eu eu turpis.</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/car3.png" alt="Project 3">
+                        <h3>Project 3</h3>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed dui eget nibh scelerisque ultrices eu eu turpis.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Jane Doe 2023</p>
+    </footer>
     <script>
-        var 예금액 = 60000;
-        var 미래예금액 = 0;
-        var month = 24;
-        var sum = 0;
+        // Get the nav element
+        const nav = document.querySelector('nav');
 
-        if (예금액 < 50000) {
-            미래예금액 = ((예금액 * 0.85) * 2);
-        } else if (예금액 > 50000) {
-            미래예금액 = ((예금액 * 0.80) * 2);
-        }
+        // Get the ul element inside nav
+        const ul = nav.querySelector('ul');
 
-        console.log(미래예금액);
+        // Get all the li elements inside ul
+        const lis = ul.querySelectorAll('li');
 
+        // Loop through each li and add an event listener
+        lis.forEach(li => {
+            li.addEventListener('click', () => {
+                // Remove the active class from all li elements
+                lis.forEach(li => li.classList.remove('active'));
+                // Add the active class to the clicked li element
+                li.classList.add('active');
+            });
+        });
     </script>
-</body>
-
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body></html>
