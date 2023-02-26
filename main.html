@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +29,6 @@
             </form>
         </div>
     </div>
-
     <script>
         //        $(document).ready(function() {
         //            $('#send').click(function() {
@@ -56,20 +56,54 @@
                 event.preventDefault();
             }
         });
-
-        $('#idInput').on('input', function() {
-            console.log('안녕');
-        })
     </script>
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
+            <span class="badge bg-dark">White 🔄</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
+
+    <!--
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="anwser">
+    <button id="send-anwser">제출</button>
+-->
+    <script>
+        //        var correctAnswer = 1335;
+        // var num = 0;
+        // $('#send-anwser').on('click', function() {
+        // if (correctAnswer == $("#anwser").val()) {
+        // alert('성공');
+        // } else if (correctAnswer != $("#anwser").val()) {
+        // num++;
+        // alert('땡!');
+        // }
+        // if (num == 3) {
+        // alert('멍청이');
+        // }
+        // });
+
+
+        var count = 1;
+        $('.badge').on('click', function() {
+            count++;
+            if (count % 2 == 0) {
+                $('.badge').html('Dark 🔄');
+                $('body').addClass('dark');
+
+            } else {
+                $('.badge').html('White 🔄');
+                $('body').removeClass('dark');
+            }
+        });
+        //        badge 클릭횟수가 홀수면 내부 글자를 Light로 변경
+        //        badge 클릭횟수가 짝수면 내부 글자를 Dark로 변경
+    </script>
 
     <ul class="list-group" id="test1">
         <li class="list-group-item active" aria-current="true">An active item</li>
@@ -83,6 +117,16 @@
         <h4>Shirts on Sale</h4>
         <button id="login" class="btn btn-danger">로그인</button>
     </div>
+
+    <div class="alert alert-danger">
+        5초 이내 구매시 사은품 증정!
+    </div>
+
+    <script>
+        setTimeout(function() {
+            $('.alert').hide();
+        }, 1000);
+    </script>
 
     <script>
         $('#login').on('click', function() {
