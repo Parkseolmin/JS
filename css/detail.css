@@ -40,4 +40,7 @@ ul.list::after {
     display: block;
 }
 
-</style >
+
+.form-hide {
+    display: none;
+}

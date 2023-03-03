@@ -30,6 +30,13 @@
         </div>
     </div>
     <script>
+        $('.black-bg').on('click', function(e) {
+            if ($(e.target).is('.black-bg')) {
+                $('.black-bg').removeClass('show-modal');
+            }
+        });
+    </script>
+    <script>
         //        $(document).ready(function() {
         //            $('#send').click(function() {
         //                var inputValueId = $('#idInput').val();
@@ -95,6 +102,10 @@
                 $('.navbar-brand').css({
                     'font-size': '15px'
                 });
+            } else {
+                $('.navbar-brand').css({
+                    'font-size': '20px'
+                });
             }
         });
     </script>
@@ -157,7 +168,7 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
     </div>
 
-    <div style="height: 1000px"></div>
+    <!--    <div style="height: 1000px"></div>-->
     <script>
         //div의 스크롤바 내린 양 + 눈에 보이는 div높이 == div의 실제높이
 
