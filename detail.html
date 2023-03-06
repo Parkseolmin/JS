@@ -27,6 +27,7 @@
         <select class="form-select mt-2">
             <option>모자</option>
             <option>셔츠</option>
+            <option>바지</option>
         </select>
         <select class="form-select mt-2 form-hide">
             <option>95</option>
@@ -34,26 +35,65 @@
         </select>
     </form>
 
-    <div id="test">
 
-    </div>
     <script>
-        var a = document.createElement('p');
-        a.innerHTML = '안녕';
-        document.querySelector('#test').appendChild(a);
+        var pansts = [28, 30, 32, 34];
+        var shirts = [95, 100, 105];
 
-    </script>
-    <script>
         $('.form-select').eq(0).on('input', function(e) {
             var value = e.currentTarget.value;
             //            var value = this.val();
             if (value == '셔츠') {
                 $('.form-select').eq(1).removeClass('form-hide');
+                $('.form-select').eq(1).html('');
+                shirts.forEach(function(a) {
+                    $('.form-select').eq(1).append(`<option>${a}</option>`);
+                });
             } else if (value == '모자') {
                 $('.form-select').eq(1).addClass('form-hide');
+            } else if (value == '바지') {
+                $('.form-select').eq(1).removeClass('form-hide');
+                $('.form-select').eq(1).html('');
+                pansts.forEach(function(data) {
+                    $('.form-select').eq(1).append(`<option>${data}</option>`);
+                });
             }
-        })
+        });
 
+        var name = ['흥민', '영희', '철수', '재석'];
+        /*i < name.length 이거는 array의 갯수 */
+        function nameFinder(name) {
+            for (let i = 0; i < name.length; i++) {
+                if (name[i] == name) {
+                    return `${name} is in the array at index ${i}`;
+                }
+            }
+            return `${name}는(은) 출석부에 없다.`;
+        }
+        console.log(nameFinder("김수"));
+
+        var score = [10, 20, 30, 40, 50];
+        var avg = 0;
+        var sum = 0;
+        var dd = 0;
+
+        function avgscore(a) {
+            score.push(a); // add the new score to the array
+            for (let i = 0; i < score.length; i++) { // loop through all scores in the array
+                sum += score[i]; // add up the scores
+            }
+            avg = sum / score.length; // calculate the average score
+            dd = a - avg; // calculate the difference between the new score and the average score
+            if (dd > 0) { // if the new score is higher than the average score
+                return `${dd} points higher than average`;
+            } else if (dd < 0) { // if the new score is lower than the average score
+                return `${Math.abs(dd)} points lower than average`;
+            } else { // if the new score is the same as the average score
+                return `equal to the average`;
+            }
+        }
+
+        console.log(avgscore(60)); // output: "10 points higher than average"
     </script>
 
     <script>
@@ -65,9 +105,6 @@
         document.querySelector('.car-title').innerHTML = car2['name'];
         document.querySelector('.car-price').innerHTML = car2['price'][1];
         document.querySelector('.car-price').innerHTML = car2.price[1];
-
-        console.log(car2);
-
     </script>
 
     <div class="container mt-5">
@@ -92,6 +129,4 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
-
-</html>
+</body></html>
