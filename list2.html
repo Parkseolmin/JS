@@ -22,6 +22,10 @@
     <div class="container">
         <button class="btn btn-danger" id="more">더보기</button>
     </div>
+    <div class="container">
+        <button class="btn btn-primary" id="sort-by-price">Sort by Price</button>
+    </div>
+
     <script>
         // 상품 정보 데이터 (임의 생성)
         var products = [{
@@ -38,32 +42,28 @@
             }
         ];
 
-
-        products.forEach((a, i) => {
+        // 템플릿 함수
+        function renderProduct(item) {
             var 템플릿 =
                 `<div class="col-sm-4">
                     <img src="https://via.placeholder.com/600" class="w-100">
-                    <h5>${products[i].title}</h5>
-                    <p>가격 : ${products[i].price}</p>
-                </div>`;
-            $('.row').append(템플릿)
-        });
-    </script>
+                    <h5>${item.title}</h5>
+                    <p>가격 : ${item.price}</p>
+            </div>`;
+            $('.row').append(템플릿);
+        }
 
-    <script>
+        products.forEach((a, i) => {
+            renderProduct(products[i]);
+        });
+
         var pageNum = 1; // 현재 페이지 번호를 저장할 변수
         var url = 'https://codingapple1.github.io/js/more1.json'; // 기본으로 가져올 데이터 url
         var maxPageNum = 2; // 가져올 수 있는 마지막 페이지 번호
 
         function renderProducts(data) {
             data.forEach((item) => {
-                var 템플릿 =
-                    `<div class="col-sm-4">
-                        <img src="https://via.placeholder.com/600" class="w-100">
-                        <h5>${item.title}</h5>
-                        <p>가격 : ${item.price}</p>
-                    </div>`;
-                $('.row').append(템플릿);
+                renderProduct(item);
             })
         }
 
@@ -79,7 +79,6 @@
                 }
             });
         }
-
         // 초기 상품 목록 불러오기
         fetchData();
 
@@ -88,7 +87,6 @@
             fetchData();
         });
     </script>
-
 
 
 
