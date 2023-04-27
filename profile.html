@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>프로필 페이지</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.2s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffaa00;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2em 1em;
+        }
+
+        section {
+            margin-bottom: 2em;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        button {
+            background-color: #ffaa00;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #ffba30;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project {
+            display: flex;
+            margin-bottom: 2em;
+        }
+
+        .description {
+            flex: 1;
+            padding-left: 1em;
+        }
+
+        #skills {
+            text-align: center;
+        }
+
+        #skills li {
+            display: inline-block;
+            margin-right: 1em;
+            margin-bottom: 0.5em;
+            padding: 0.5em 1em;
+            background-color: #222;
+            color: white;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="intro">
+            <h1>프론트엔드 개발자</h1>
+            <p>저는 HTML, CSS, JavaScript를 이용하여 웹사이트를 개발하는 것을 좋아합니다.</p>
+            <button>포트폴리오 보기</button>
+        </section>
+        <section id="projects">
+            <h2>프로젝트</h2>
+            <div class="project">
+                <img src="img/car1.png" width="200px" alt="프로젝트 이미지">
+                <div class="description">
+                    <h3>프로젝트 1</h3>
+                    <p>이 프로젝트는 HTML과 CSS를 이용하여 만든 반응형 웹사이트입니다.</p>
+                    <button>자세히 보기</button>
+                </div>
+            </div>
+            <div class="project">
+                <img src="img/car1.png" width="200px" alt="프로젝트 이미지">
+                <div class="description">
+                    <h3>프로젝트 2</h3>
+                    <p>이 프로젝트는 JavaScript를 이용하여 만든 인터랙티브한 웹사이트입니다.</p>
+                    <button>자세히 보기</button>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>보유 기술</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 Frontend Developer. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
